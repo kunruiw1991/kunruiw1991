@@ -1,6 +1,6 @@
 # 🎮 Kids' Web Games & Interactive Studios — Chronological Master Index
 
-> **Live Interactive Arcade Catalog (GitHub Pages)**: [https://kunruiw1991.github.io/kunruiw1991/](https://kunruiw1991.github.io/kunruiw1991/)
+> **Live Interactive Arcade Catalog (GitHub Pages)**: [https://kunruiw1991.github.io/](https://kunruiw1991.github.io/)
 >
 > A complete chronological directory of all **59 playable web games and interactive creative studios** built for my 5-year-old kid (`2026-09-21` to `2026-11-03`), sorted in strict chronological order (`created_at` UTC ascending). Every game runs directly in mobile/iPad Safari and desktop browsers on GitHub Pages with zero install.
 
