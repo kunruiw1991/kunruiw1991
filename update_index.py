@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
-"""Regenerates README.md and index.html from games.json in chronological order.
+"""Regenerates games.json, README.md, and index.html in chronological order.
 Usage when adding a new game:
-  python3 update_index.py --add-slug <slug> --date "YYYY-MM-DD HH:MM" --title "<Title>" --genre "<Genre>" --phase "<Phase>" --desc "<Highlights>"
+  python3 update_index.py \
+    --add-slug <slug> \
+    --date "YYYY-MM-DD HH:MM" \
+    --title "<Title>" \
+    --genre "<Genre>" \
+    --phase "Phase 5: QQ Classics 3D & Bilibili Remakes" \
+    --desc "<1-sentence gameplay highlight>"
 """
-import argparse, json, os
+import argparse, json, os, re
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 GAMES_PATH = os.path.join(DIR, "games.json")
+README_PATH = os.path.join(DIR, "README.md")
+HTML_PATH = os.path.join(DIR, "index.html")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -50,6 +58,13 @@ def main():
     first_date = games[0]["date"][:10]
     last_date = games[-1]["date"][:10]
 
+    # 1. Update README.md (keeping existing Phase summary footer if present)
+    with open(README_PATH, "r", encoding="utf-8") as f:
+        old_readme = f.read()
+    footer = ""
+    if "\n---\n\n## 📊 Summary by Phase" in old_readme:
+        footer = "\n---\n\n## 📊 Summary by Phase" + old_readme.split("\n---\n\n## 📊 Summary by Phase", 1)[1]
+
     md_lines = [
         f"# 📌 Complete Chronological Game Index (`#01` → `#{last_num}`)",
         "",
@@ -62,9 +77,42 @@ def main():
         md_lines.append(
             f"| **{g['numStr']}** | `{g['date']}` | **{g['title']}** | [▶️ Play Live]({g['playUrl']}) | [`{g['slug']}`]({g['repoUrl']}) | {g['genre']} | {g['desc']} |"
         )
-    with open(os.path.join(DIR, "README.md"), "w", encoding="utf-8") as f:
-        f.write("\n".join(md_lines) + "\n")
-    print(f"Updated games.json and README.md ({total} games: #01 -> #{last_num})")
+    with open(README_PATH, "w", encoding="utf-8") as f:
+        f.write("\n".join(md_lines) + "\n" + footer)
+
+    # 2. Update index.html (pinned table rows, header counts, and const GAMES JSON)
+    with open(HTML_PATH, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    rows_html = "\n".join([
+        f"""          <tr>
+            <td class="col-num"><strong>#{g['numStr']}</strong></td>
+            <td class="col-date"><code>{g['date']}</code></td>
+            <td class="col-title"><a href="{g['playUrl']}" target="_blank" rel="noopener"><strong>{g['title']}</strong></a></td>
+            <td class="col-play"><a class="table-play-btn" href="{g['playUrl']}" target="_blank" rel="noopener">▶️ Play Live</a></td>
+            <td class="col-repo"><a href="{g['repoUrl']}" target="_blank" rel="noopener"><code>{g['slug']}</code></a></td>
+            <td class="col-genre"><span class="genre-badge">{g['genre']}</span></td>
+            <td class="col-desc">{g['desc']}</td>
+          </tr>"""
+        for g in games
+    ])
+
+    html = re.sub(r"<tbody>\s*.*?\s*</tbody>", f"<tbody>\n{rows_html}\n          </tbody>", html, flags=re.S)
+    html = re.sub(r"#01 → #\d+", f"#01 → #{last_num}", html)
+    html = re.sub(r"#01→#\d+", f"#01→#{last_num}", html)
+    html = re.sub(r"#\d+→#01", f"#{last_num}→#01", html)
+    html = re.sub(r"All \d+ Games", f"All {total} Games", html)
+    html = re.sub(r"<strong>\d+ Kids' Web Games", f"<strong>{total} Kids' Web Games", html)
+    html = re.sub(
+        r"const GAMES = \[.*?\];\n    let activePhase",
+        f"const GAMES = {json.dumps(games, ensure_ascii=False)};\n    let activePhase",
+        html,
+        flags=re.S
+    )
+    with open(HTML_PATH, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    print(f"Updated games.json, README.md, and index.html ({total} games: #01 -> #{last_num})")
 
 if __name__ == "__main__":
     main()
