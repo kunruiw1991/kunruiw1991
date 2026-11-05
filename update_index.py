@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+"""Regenerates README.md and index.html from games.json in chronological order.
+Usage when adding a new game:
+  python3 update_index.py --add-slug <slug> --date "YYYY-MM-DD HH:MM" --title "<Title>" --genre "<Genre>" --phase "<Phase>" --desc "<Highlights>"
+"""
+import argparse, json, os
+
+DIR = os.path.dirname(os.path.abspath(__file__))
+GAMES_PATH = os.path.join(DIR, "games.json")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--add-slug", help="GitHub repo slug of new game")
+    parser.add_argument("--date", help="Created UTC date (YYYY-MM-DD HH:MM)")
+    parser.add_argument("--title", help="Game title")
+    parser.add_argument("--genre", help="Engine / Genre badge")
+    parser.add_argument("--phase", default="Phase 5: QQ Classics 3D & Bilibili Remakes", help="Phase bucket")
+    parser.add_argument("--desc", help="Short 1-sentence gameplay highlight")
+    args = parser.parse_args()
+
+    with open(GAMES_PATH, "r", encoding="utf-8") as f:
+        games = json.load(f)
+
+    if args.add_slug:
+        games = [g for g in games if g["slug"] != args.add_slug]
+        games.append({
+            "num": len(games) + 1,
+            "numStr": f"{len(games) + 1:02d}",
+            "date": args.date,
+            "slug": args.add_slug,
+            "title": args.title,
+            "genre": args.genre,
+            "phase": args.phase,
+            "desc": args.desc,
+            "playUrl": f"https://kunruiw1991.github.io/{args.add_slug}/",
+            "repoUrl": f"https://github.com/kunruiw1991/{args.add_slug}",
+            "thumbUrl": f"https://raw.githubusercontent.com/kunruiw1991/{args.add_slug}/main/screenshot.jpg"
+        })
+
+    games.sort(key=lambda g: g["date"])
+    for idx, g in enumerate(games, 1):
+        g["num"] = idx
+        g["numStr"] = f"{idx:02d}"
+
+    with open(GAMES_PATH, "w", encoding="utf-8") as f:
+        json.dump(games, f, indent=2, ensure_ascii=False)
+
+    total = len(games)
+    last_num = f"{total:02d}"
+    first_date = games[0]["date"][:10]
+    last_date = games[-1]["date"][:10]
+
+    md_lines = [
+        f"# 📌 Complete Chronological Game Index (`#01` → `#{last_num}`)",
+        "",
+        f"> **Live Arcade Homepage**: [https://kunruiw1991.github.io/](https://kunruiw1991.github.io/) · **{total} Playable Kids' Web Games & Interactive Studios** (`{first_date}` to `{last_date}`, sorted in chronological order).",
+        "",
+        "| # | Created (UTC) | Game Title | Live Game (GitHub Pages) | GitHub Repo | Engine / Genre | Highlights |",
+        "| :-: | :--- | :--- | :---: | :--- | :--- | :--- |",
+    ]
+    for g in games:
+        md_lines.append(
+            f"| **{g['numStr']}** | `{g['date']}` | **{g['title']}** | [▶️ Play Live]({g['playUrl']}) | [`{g['slug']}`]({g['repoUrl']}) | {g['genre']} | {g['desc']} |"
+        )
+    with open(os.path.join(DIR, "README.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(md_lines) + "\n")
+    print(f"Updated games.json and README.md ({total} games: #01 -> #{last_num})")
+
+if __name__ == "__main__":
+    main()
