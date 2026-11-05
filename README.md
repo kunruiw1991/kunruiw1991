@@ -1,6 +1,6 @@
-# 📌 Complete Chronological Game Index (`#01` → `#59`)
+# 📌 Complete Chronological Game Index (`#01` → `#60`)
 
-> **Live Arcade Homepage**: [https://kunruiw1991.github.io/](https://kunruiw1991.github.io/) · **59 Playable Kids' Web Games & Interactive Studios** (`2026-09-21` to `2026-11-03`, sorted in chronological order).
+> **Live Arcade Homepage**: [https://kunruiw1991.github.io/](https://kunruiw1991.github.io/) · **60 Playable Kids' Web Games & Interactive Studios** (`2026-09-21` to `2026-11-05`, sorted in chronological order).
 
 | # | Created (UTC) | Game Title | Live Game (GitHub Pages) | GitHub Repo | Engine / Genre | Highlights |
 | :-: | :--- | :--- | :---: | :--- | :--- | :--- |
@@ -63,6 +63,7 @@
 | **57** | `2026-11-01 17:11` | **Panda Pop Star Party** | [▶️ Play Live](https://kunruiw1991.github.io/panda-game/) | [`panda-game`](https://github.com/kunruiw1991/panda-game) | Interactive Panda Feeding Game | Interactive gourmet panda feeding, bamboo treats & star party game. |
 | **58** | `2026-11-01 19:48` | **New Era for the Myriad Souls (3D Pop-Up Stage Studio)** | [▶️ Play Live](https://kunruiw1991.github.io/endfield-sauin-studio/) | [`endfield-sauin-studio`](https://github.com/kunruiw1991/endfield-sauin-studio) | English Three.js 3D Theater | 100% English-voiced (52 neural clips) 3D pop-up storybook stage directing comedy game across 3 acts. |
 | **59** | `2026-11-03 05:23` | **Lucky Block Titans 3D** | [▶️ Play Live](https://kunruiw1991.github.io/lucky-block-titans/) | [`lucky-block-titans`](https://github.com/kunruiw1991/lucky-block-titans) | English Three.js 3D Voxel Adventure | 100% English-voiced (68 neural clips) 3D voxel toy-island adventure for 5-year-olds with 8 Lucky Block surprises & 3 bosses. |
+| **60** | `2026-11-05 23:03` | **Tung Tung Tung Sahur 3D: Brainrot Rhythm Island!** | [▶️ Play Live](https://kunruiw1991.github.io/tung-tung-sahur-3d/) | [`tung-tung-sahur-3d`](https://github.com/kunruiw1991/tung-tung-sahur-3d) | English Three.js 3D Brainrot Adventure | 100% English-voiced (68 neural clips) 3D Brainrot toy-island adventure starring Tung Tung Tung Sahur, Tralalero Tralala, Bombardiro Crocodilo, Ballerina Cappuccina & Brr Brr Patapim. |
 
 ---
 
