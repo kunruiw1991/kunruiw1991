@@ -1,24 +1,6 @@
-# 🎮 Kids' Web Games & Interactive Studios — Chronological Master Index
+# 📌 Complete Chronological Game Index (`#01` → `#59`)
 
-> **Live Interactive Arcade Catalog (GitHub Pages)**: [https://kunruiw1991.github.io/](https://kunruiw1991.github.io/)
->
-> A complete chronological directory of all **59 playable web games and interactive creative studios** built for my 5-year-old kid (`2026-09-21` to `2026-11-03`), sorted in strict chronological order (`created_at` UTC ascending). Every game runs directly in mobile/iPad Safari and desktop browsers on GitHub Pages with zero install.
-
----
-
-## 📊 High-Level Evolution by Phase
-
-| Phase | Date Range (UTC) | Games | Key Theme & Engineering Evolution |
-| :--- | :--- | :---: | :--- |
-| **Phase 1: Storybooks, Creative Studios & Voxel Defense** | `2026-09-21` – `2026-09-30` | **17** (`#01`–`#17`) | 3D Sing-Along TV, iPad Drawing PWA, Bilingual Interactive Storybooks (*Havoc in Heaven*, *Calabash Critters*), 3D Plush Repair Clinic, Mid-Autumn Party Games, and 3D Voxel *CritterCraft* / *Moonfall*. |
-| **Phase 2: 2D Physics & Arcade Classics** | `2026-10-01` – `2026-10-07` | **7** (`#18`–`#24`) | Tactile 2D physics remakes starring Smiling Critters: *Where's My Water?* Fluid Bath, *Cut the Rope*, *Angry Critters Slingshot*, *Bubble Pop*, *Suika Merge*, *Claw & Gold Miner*, and *Brick Breaker*. |
-| **Phase 3: 3D WebGL Sports Series & Grand RPG** | `2026-10-07` – `2026-10-16` | **14** (`#25`–`#38`) | 12 distinct `Three.js` 3D WebGL engines with 120Hz substepped physics & Top-3 Olympic Podium rules (*Kart*, *Gobble*, *Pinball*, *Bowling*, *Sumo*, *Fishing*, *Mini-Golf*, *Taiko Rhythm*, *Air Hockey*, *Coaster*, *Helix Tower*, *Curling*), plus the 16-land *Critter Quest RPG* and *Dream Express*. |
-| **Phase 4: Zero-Text 3D Toy Worlds & iPad BoxBoy** | `2026-10-16` – `2026-10-27` | **11** (`#39`–`#49`) | 100% Zero-Text, tactile 1:1 finger-dragging 3D toy worlds (*Rainbow Kitchen*, *Pizzeria 3D*, *Carnival Darts 3D*, *Cozy Snow Bunker 3D*, *Treasure Scoop & Bun Swap 3D*, *Battle Tower 3D*, *Peach Garden 3D*), *iPad BoxBoy! + Box Girl!*, *Bonny Balls*, *FORi Flower Studio*, and English-voiced *KPop Demon Hunters Repair Workshop 3D*. |
-| **Phase 5: QQ Game Hall 3D Suite & Bilibili Remakes** | `2026-10-29` – `2026-11-03` | **10** (`#50`–`#59`) | `Three.js` WebGL2 *QQ Game Hall 3D Suite* (*QQ Tang 3D*, *Bubble Dragon 3D*, *Aeroplane Chess 3D*, *Watermelon 3D*, *3D Portal*), *Angry Birds Musou (10× Buffed)*, *Panda Pop Star Party*, and 100% English Neural-Voiced 3D Bilibili remakes (*Mob Beauty Pageant 3D*, *New Era for the Myriad Souls*, *Lucky Block Titans 3D*). |
-
----
-
-## 🗓️ Complete Chronological Game Index (`#01` → `#59`)
+> **Live Arcade Homepage**: [https://kunruiw1991.github.io/](https://kunruiw1991.github.io/) · **59 Playable Kids' Web Games & Interactive Studios** (`2026-09-21` to `2026-11-03`, sorted in chronological order).
 
 | # | Created (UTC) | Game Title | Live Game (GitHub Pages) | GitHub Repo | Engine / Genre | Highlights |
 | :-: | :--- | :--- | :---: | :--- | :--- | :--- |
@@ -84,9 +66,12 @@
 
 ---
 
-## 🎨 Companion Asset & 3D Rig Libraries
+## 📊 Summary by Phase
 
-| Created (UTC) | Library | Gallery Link | GitHub Repo | Description |
-| :--- | :--- | :---: | :--- | :--- |
-| `2026-09-22 23:35` | **Smiling Critters High-Resolution Asset Library** | [🖼️ Gallery](https://kunruiw1991.github.io/smiling-critters-assets/) | [`smiling-critters-assets`](https://github.com/kunruiw1991/smiling-critters-assets) | 318+ verified character renders, transparent cutouts & Blender 4.3 `v11` 3D plush base models. |
-| `2026-09-24 23:36` | **Mikey & JJ (Maizen) Asset Reference Library** | [🖼️ Gallery](https://kunruiw1991.github.io/mikey-jj-assets/) | [`mikey-jj-assets`](https://github.com/kunruiw1991/mikey-jj-assets) | Character artwork, sprites & visual reference gallery for *Moonlight Snake Party* and voxel games. |
+| Phase | Date Range (UTC) | Games | Key Theme & Engineering Evolution |
+| :--- | :--- | :---: | :--- |
+| **Phase 1: Storybooks, Creative Studios & Voxel Defense** | `2026-09-21` – `2026-09-30` | **17** (`#01`–`#17`) | 3D Sing-Along TV, iPad Drawing PWA, Bilingual Interactive Storybooks (*Havoc in Heaven*, *Calabash Critters*), 3D Plush Repair Clinic, Mid-Autumn Party Games, and 3D Voxel *CritterCraft* / *Moonfall*. |
+| **Phase 2: 2D Physics & Arcade Classics** | `2026-10-01` – `2026-10-07` | **7** (`#18`–`#24`) | Tactile 2D physics remakes starring Smiling Critters: *Where's My Water?* Fluid Bath, *Cut the Rope*, *Angry Critters Slingshot*, *Bubble Pop*, *Suika Merge*, *Claw & Gold Miner*, and *Brick Breaker*. |
+| **Phase 3: 3D WebGL Sports Series & Grand RPG** | `2026-10-07` – `2026-10-16` | **14** (`#25`–`#38`) | 12 distinct `Three.js` 3D WebGL engines with 120Hz substepped physics & Top-3 Olympic Podium rules (*Kart*, *Gobble*, *Pinball*, *Bowling*, *Sumo*, *Fishing*, *Mini-Golf*, *Taiko Rhythm*, *Air Hockey*, *Coaster*, *Helix Tower*, *Curling*), plus the 16-land *Critter Quest RPG* and *Dream Express*. |
+| **Phase 4: Zero-Text 3D Toy Worlds & iPad BoxBoy** | `2026-10-16` – `2026-10-27` | **11** (`#39`–`#49`) | 100% Zero-Text, tactile 1:1 finger-dragging 3D toy worlds (*Rainbow Kitchen*, *Pizzeria 3D*, *Carnival Darts 3D*, *Cozy Snow Bunker 3D*, *Treasure Scoop & Bun Swap 3D*, *Battle Tower 3D*, *Peach Garden 3D*), *iPad BoxBoy! + Box Girl!*, *Bonny Balls*, *FORi Flower Studio*, and English-voiced *KPop Demon Hunters Repair Workshop 3D*. |
+| **Phase 5: QQ Game Hall 3D Suite & Bilibili Remakes** | `2026-10-29` – `2026-11-03` | **10** (`#50`–`#59`) | `Three.js` WebGL2 *QQ Game Hall 3D Suite* (*QQ Tang 3D*, *Bubble Dragon 3D*, *Aeroplane Chess 3D*, *Watermelon 3D*, *3D Portal*), *Angry Birds Musou (10× Buffed)*, *Panda Pop Star Party*, and 100% English Neural-Voiced 3D Bilibili remakes (*Mob Beauty Pageant 3D*, *New Era for the Myriad Souls*, *Lucky Block Titans 3D*). |
